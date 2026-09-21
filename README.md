@@ -23,3 +23,7 @@ Open `index.html` directly in a browser, or serve the folder with any static web
 ## Topics
 
 `cybersecurity` `python` `linux` `network-security` `portfolio` `javascript` `html` `css` `security-automation`
+
+## Search Visibility
+
+The site includes a canonical URL, Open Graph metadata, JSON-LD profile data, `robots.txt`, and an XML sitemap. After enabling GitHub Pages, submit `https://dev-alok24.github.io/lynxportfolio/` in Google Search Console for indexing.
