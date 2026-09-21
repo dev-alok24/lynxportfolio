@@ -4,6 +4,33 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>LYNX — Cybersecurity Engineer &amp; Python Developer</title>
 <meta name="description" content="LYNX — Cybersecurity Engineer, Python Developer, Linux Enthusiast &amp; Network Security Explorer. Futuristic developer portfolio." />
+<meta name="author" content="Alok Upadhyay" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="keywords" content="Alok Upadhyay, LYNX portfolio, cybersecurity engineer, Python developer, Linux, network security, security automation" />
+<link rel="canonical" href="https://dev-alok24.github.io/lynxportfolio/" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://dev-alok24.github.io/lynxportfolio/" />
+<meta property="og:title" content="LYNX — Cybersecurity Engineer &amp; Python Developer" />
+<meta property="og:description" content="Portfolio of Alok Upadhyay: cybersecurity, Python, Linux, networking and security automation projects." />
+<meta property="og:site_name" content="LYNX Portfolio" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="LYNX — Cybersecurity Engineer &amp; Python Developer" />
+<meta name="twitter:description" content="Explore Alok Upadhyay's cybersecurity, Python, Linux and network security projects." />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Alok Upadhyay",
+  "alternateName": "LYNX",
+  "url": "https://dev-alok24.github.io/lynxportfolio/",
+  "sameAs": [
+    "https://github.com/dev-alok24",
+    "https://instagram.com/search.alok"
+  ],
+  "jobTitle": "Cybersecurity Engineer and Python Developer",
+  "knowsAbout": ["Cybersecurity", "Python", "Linux", "Network Security", "Security Automation"]
+}
+</script>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23050816'/%3E%3Cg fill='none' stroke='%2300E5FF' stroke-width='3' stroke-linejoin='round'%3E%3Cpath d='M12 22 L10 6 L27 16 Z'/%3E%3Cpath d='M52 22 L54 6 L37 16 Z'/%3E%3Cpath d='M12 22 L27 16 L32 20 L37 16 L52 22 L50 38 L41 51 L32 56 L23 51 L14 38 Z'/%3E%3C/g%3E%3Cpath d='M21 31 L30 29 L28 36 L21 35 Z' fill='%2322D3EE'/%3E%3Cpath d='M43 31 L34 29 L36 36 L43 35 Z' fill='%2322D3EE'/%3E%3Cpath d='M32 41 L36 45 L32 50 L28 45 Z' fill='%237C3AED'/%3E%3C/svg%3E" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -565,7 +592,7 @@ footer p span{color:var(--neon)}
   .menu-btn{display:flex}
   section{padding:72px 20px}
   .hero{padding:112px 20px 82px}
-  .loader-\boxed{padding:28px 22px;min-width:0;width:92vw}
+  .loader-box{padding:28px 22px;min-width:0;width:92vw}
   .brand-tag{display:none}
   .brand-word{font-size:16px;letter-spacing:4px}
 }
@@ -654,7 +681,7 @@ footer p span{color:var(--neon)}
     <li><a href="#projects">Projects</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
-  <button class="menu-btn" id="menuBtn" aria-label="Toggle menu">☰</button>
+  <button class="menu-btn" id="menuBtn" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">☰</button>
 </nav>
 
 <!-- HERO -->
@@ -701,7 +728,7 @@ footer p span{color:var(--neon)}
       <a href="https://instagram.com/search.alok" target="_blank" rel="noopener" class="social-btn" title="Instagram — @search.alok">◎</a>
       <a href="mailto:alokupadhyay6666@gmail.com" class="social-btn" title="Email">✉</a>
       <a href="tel:+919272441723" class="social-btn" title="Phone">☏</a>
-      <a href="#projects" class="social-btn" title="GitHub">⌘</a>
+      <a href="https://github.com/dev-alok24" target="_blank" rel="noopener" class="social-btn" title="GitHub">⌘</a>
       <a href="#contact" class="social-btn" title="LinkedIn">in</a>
     </div>
   </div>
@@ -1298,9 +1325,15 @@ document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
 /* ============ NAV / MENU ============ */
 const menuBtn = document.getElementById('menuBtn');
 const navLinks = document.getElementById('navLinks');
-menuBtn.addEventListener('click', function(){ navLinks.classList.toggle('open'); });
+menuBtn.addEventListener('click', function(){
+  const isOpen = navLinks.classList.toggle('open');
+  menuBtn.setAttribute('aria-expanded', String(isOpen));
+});
 navLinks.querySelectorAll('a').forEach(function(a){
-  a.addEventListener('click', function(){ navLinks.classList.remove('open'); });
+  a.addEventListener('click', function(){
+    navLinks.classList.remove('open');
+    menuBtn.setAttribute('aria-expanded', 'false');
+  });
 });
 
 const mainNav = document.getElementById('mainNav');
